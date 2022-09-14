@@ -1,8 +1,9 @@
 import { NextPage } from "next";
 import Image from "next/image";
-import { Register_Container, Card, List, Btn, Title } from "./styles/styles"
-import  kitNutricional from "../assets/kit-nutricional.png";
-import  kitSeytu from "../assets/kit-seytu.png";
+import { Register_Container, List, Btn, Title } from "./styles/styles"
+import kitNutricional from "../assets/kit-nutricional.png";
+import kitSeytu from "../assets/kit-seytu.png";
+import { Button, Card, CardActions, CardContent, CardMedia, Typography } from "@mui/material";
 
 const Register: NextPage = () => {
   return (
@@ -69,56 +70,82 @@ const Register: NextPage = () => {
               id="section_kits"
               className="row row-cols-1 row-cols-md-2 g-4 pb-5"
             >
-              <div id="card_kit" className="col">
+              <Card id="card_kit" className="col">
                 <Card className=" border rounded-4 h-100 p-5">
-                  <Image src={kitSeytu} className="img-fluid" alt="kit seytu omnilife"/>
-                  <div className="card-body p-3">
-                    <span>KIT SEYTU - R$254</span>
-                    <ul>
-                      <li>Espuma de limpeza facial</li>
-                      <li>Creme de mãos</li>
-                      <li>Batom Cremoso</li>
-                      <li>PIN</li>
-                      <li>Revista</li>
-                      <li>Catálogo</li>
-                      <li>Bolsa Executiva</li>
-                    </ul>
-                    <div className="d-grid col-10 mx-auto">
-                      <Btn
-                        className="btn btn-primary btn-lg border rounded-5"
-                        type="button"
-                      >
-                        Cadastrar
-                      </Btn>
+                  <Image
+                    src={kitSeytu}
+                    alt="kit seytu omnilife"
+
+                  />
+                  <CardContent>
+                    <div className="card-body p-3">
+                      <Typography gutterBottom variant="h5" component="div">
+                        KIT SEYTU - R$254
+                      </Typography >
+                      <Typography variant="body2" color="text.secondary">
+                        <ul>
+                          <li>Espuma de limpeza facial</li>
+                          <li>Creme de mãos</li>
+                          <li>Batom Cremoso</li>
+                          <li>PIN</li>
+                          <li>Revista</li>
+                          <li>Catálogo</li>
+                          <li>Bolsa Executiva</li>
+                        </ul>
+                      </Typography>
+                      <CardActions>
+                        <Button
+                          className="btn btn-primary btn-lg border rounded-5"
+                          type="button"
+                        >
+                          Cadastrar
+                        </Button>
+                      </CardActions>
                     </div>
-                  </div>
+                  </CardContent>
                 </Card>
-              </div>
-              <div id="card_kit" className="col">
+              </Card>
+
+
+              <Card id="card_kit" className="col">
                 <Card className=" border rounded-4 h-100 p-5">
-                  <Image src={kitNutricional} className="img-fluid" alt="kit nutricional omnilife"/>
-                  <div className="card-body p-3">
-                    <span>KIT NUTRICIONAL - R$254</span>
-                    <ul>
-                      <li>Magnus caixa 30 sachês</li>
-                      <li>Coqueteleira</li>
-                      <li>PIN</li>
-                      <li>Catálogo</li>
-                      <li>Revista</li>
-                      <li>Mochila Executiva</li>
-                      <li>Calendario</li>
-                    </ul>
-                    <div className="d-grid col-10 mx-auto">
-                      <Btn
-                        className="btn btn-primary btn-lg border rounded-5"
-                        type="button"
-                      >
-                        Cadastrar
-                      </Btn>
+                  <Image
+                    src={kitNutricional}
+                    alt="kit nutricional omnilife"
+                  />
+                  <CardContent>
+
+                    <div className="card-body p-3">
+                      <Typography gutterBottom variant="h5" component="div">
+                        KIT NUTRICIONAL - R$254
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary">
+
+                        <ul>
+                          <li>Magnus caixa 30 sachês</li>
+                          <li>Coqueteleira</li>
+                          <li>PIN</li>
+                          <li>Catálogo</li>
+                          <li>Revista</li>
+                          <li>Mochila Executiva</li>
+                          <li>Calendario</li>
+                        </ul>
+                      </Typography>
+                      <CardActions>
+
+                        <Button
+                          className="btn btn-primary btn-lg border rounded-5"
+                          type="button"
+                        >
+                          Cadastrar
+                        </Button>
+
+                      </CardActions>
+
                     </div>
-                  </div>
+                  </CardContent>
                 </Card>
-              </div>
+              </Card>
             </section>
           </div>
         </div>

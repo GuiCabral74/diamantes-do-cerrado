@@ -5,6 +5,7 @@ import Footer from '../src/components/footer'
 import Products from '../src/components/products'
 import Register from '../src/components/register'
 import GlobalStyle from '../src/components/styles/globalStyles';
+import Album from '../src/components/test'
 
 const Home: NextPage = () => {
   return (
@@ -14,6 +15,7 @@ const Home: NextPage = () => {
       <About/>
       <Register/>
       <Contact/> 
+      <Album />
       <Footer/>
     </>
   )

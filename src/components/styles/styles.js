@@ -53,10 +53,6 @@ export const Card = styled.div`
   ul {
     background: none;
   }
-
-  /* span, ul, li {
-    background: #8801FF;
-  } */
 `
 
 export const Btn = styled.button`
