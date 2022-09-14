@@ -1,6 +1,6 @@
 import { NextPage } from "next";
 import Image from "next/image";
-import { Register_Container, My_div, Card, List } from "./styles/styles"
+import { Register_Container, Card, List, Btn, Title } from "./styles/styles"
 import  kitNutricional from "../assets/kit-nutricional.png";
 import  kitSeytu from "../assets/kit-seytu.png";
 
@@ -8,9 +8,9 @@ const Register: NextPage = () => {
   return (
     <>
       <Register_Container className="container col-12 py-5">
-        <My_div className="col-10 mx-auto">
+        <div className="col-10 mx-auto">
           <div>
-            <h1 className="py-5">Vantagens de Cadastrar</h1>
+            <Title className="py-5">Vantagens de Cadastrar</Title>
             <List className="list-group list-group-flush">
               <li className="list-group-item">
                 <div>
@@ -70,7 +70,7 @@ const Register: NextPage = () => {
               className="row row-cols-1 row-cols-md-2 g-4 pb-5"
             >
               <div id="card_kit" className="col">
-                <Card className=" border rounded h-100">
+                <Card className=" border rounded-4 h-100 p-5">
                   <Image src={kitSeytu} className="img-fluid" alt="kit seytu omnilife"/>
                   <div className="card-body p-3">
                     <span>KIT SEYTU - R$254</span>
@@ -84,20 +84,18 @@ const Register: NextPage = () => {
                       <li>Bolsa Executiva</li>
                     </ul>
                     <div className="d-grid col-10 mx-auto">
-                      {" "}
-                      {/*  style="background: none;" */}
-                      <button
-                        className="btn btn-primary btn-lg border rounded"
+                      <Btn
+                        className="btn btn-primary btn-lg border rounded-5"
                         type="button"
                       >
                         Cadastrar
-                      </button>
+                      </Btn>
                     </div>
                   </div>
                 </Card>
               </div>
               <div id="card_kit" className="col">
-                <Card className=" border rounded h-100">
+                <Card className=" border rounded-4 h-100 p-5">
                   <Image src={kitNutricional} className="img-fluid" alt="kit nutricional omnilife"/>
                   <div className="card-body p-3">
                     <span>KIT NUTRICIONAL - R$254</span>
@@ -111,21 +109,19 @@ const Register: NextPage = () => {
                       <li>Calendario</li>
                     </ul>
                     <div className="d-grid col-10 mx-auto">
-                      {" "}
-                      {/*  style="background: none;" */}
-                      <button
-                        className="btn btn-primary btn-lg border rounded"
+                      <Btn
+                        className="btn btn-primary btn-lg border rounded-5"
                         type="button"
                       >
                         Cadastrar
-                      </button>
+                      </Btn>
                     </div>
                   </div>
                 </Card>
               </div>
             </section>
           </div>
-        </My_div>
+        </div>
       </Register_Container>
     </>
   )

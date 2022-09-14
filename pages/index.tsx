@@ -9,7 +9,7 @@ import GlobalStyle from '../src/components/styles/globalStyles';
 const Home: NextPage = () => {
   return (
     <>
-    <GlobalStyle/>
+      <GlobalStyle/>
       <Products/>
       <About/>
       <Register/>

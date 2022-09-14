@@ -28,20 +28,23 @@ export const Register_Container = styled.section `
     }
 `
 
-export const My_div = styled.div `
-  h1 {
+export const Title = styled.h1 `
     text-align: center;
     font-weight: bold;
     font-size: 45px;
-  }
+  
 `
 
 export const List = styled.ul`
-  background: none;
+  background: none !important;
+  
+
+li{
+  background-color: transparent;}
 `
 
 export const Card = styled.div`
-  background: #E52DFA;
+  background: #fff;
 
   img{
     background: none;
@@ -56,6 +59,12 @@ export const Card = styled.div`
   } */
 `
 
+export const Btn = styled.button`
+  background: #712CF9;
+  &:hover { 
+    background: red;
+  }
+`
 
 // CONTATO
 
