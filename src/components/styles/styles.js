@@ -40,7 +40,10 @@ export const List = styled.ul`
   
 
 li{
-  background-color: transparent;}
+  background-color: transparent;
+  color:#fff;
+}
+
 `
 
 export const Card = styled.div`
@@ -57,8 +60,9 @@ export const Card = styled.div`
 
 export const Btn = styled.button`
   background: #712CF9;
+  width: 350px;
   &:hover { 
-    background: red;
+    background: red !important;
   }
 `
 

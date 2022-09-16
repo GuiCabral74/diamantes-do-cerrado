@@ -15,7 +15,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Link from '@mui/material/Link';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { List } from './styles/styles';
+import { Btn, List, Register_Container } from './styles/styles';
 import Image from "next/image";
 
 import kits from './kits.js'
@@ -28,22 +28,14 @@ export default function Album() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <AppBar position="relative">
-        <Toolbar>
-          <Typography variant="h6" color="inherit" noWrap>
-            Album layout
-          </Typography>
-        </Toolbar>
-      </AppBar>
       <main>
         <Box
           sx={{
-            bgcolor: 'background.paper',
             pt: 8,
             pb: 6,
           }}
         >
-          <Container maxWidth="sm">
+          <Register_Container maxWidth="xl">
             <Typography
               component="h1"
               variant="h2"
@@ -109,13 +101,22 @@ export default function Album() {
 
 
             </Typography>
-          </Container>
+          </Register_Container>
         </Box>
+        <Typography
+              component="h1"
+              variant="h2"
+              align="center"
+              color="text.primary"
+              gutterBottom
+            >
+              Escolha o seu KIT INICIAL
+            </Typography>
         <Container sx={{ py: 8 }} maxWidth="md">
           {/* End hero unit */}
           <Grid container spacing={4}>
             {kits.map((item: any, index: number) => (
-              <Grid item key={index} xs={12} sm={6} md={4}>
+              <Grid item key={index} xs={12} sm={6} md={6}>
                 <Card
                   sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
                 >
@@ -125,17 +126,23 @@ export default function Album() {
                   />
                   
                   <CardContent sx={{ flexGrow: 1 }}>
-                    <Typography gutterBottom variant="h5" component="h2">
+                    <Typography gutterBottom variant="h5" component="h2" textAlign={"center"} >
                       {item.name}
                     </Typography>
                     <Typography>
                       <ul>
-                        <li>{item.description}</li>
+                        <li>{item.description1}</li>
+                        <li>{item.description2}</li>
+                        <li>{item.description3}</li>
+                        <li>{item.description4}</li>
+                        <li>{item.description5}</li>
+                        <li>{item.description6}</li>
+                        {item.description7 ? <li>{item.description7}</li> : ""}
                       </ul>
                     </Typography>
                   </CardContent>
                   <CardActions>
-                    <Button>Cadastrar</Button>
+                    <Btn className="btn btn-primary btn-lg border m-auto p-3 rounded-5">Cadastrar</Btn>
                   </CardActions>
                 </Card>
               </Grid>
