@@ -1,12 +1,13 @@
 import type { NextPage } from "next"
+import { Contact_form, Contact_whats } from "./styles/styles"
 
 const Contact: NextPage = () => {
   return (
     <section className="border rounded p-3 m-5">
 
-      <div className="container col-12">
-        <div className="contact col-3 m-auto pt-5">
-          <h2 className="title">Entre em contato!</h2>
+      <Contact_form className="container col-12">
+        <div className="col-5 m-auto pt-5 text-center">
+          <h2 className="display-4">Entre em contato!</h2>
           <p>Deixe aqui sua mensagem e em breve retornaremos contato <br />Fique atento ao seu e-mail ou Whatsapp!</p>
         </div>
         <form className="col-9 m-auto py-5">
@@ -29,12 +30,12 @@ const Contact: NextPage = () => {
           <button type="submit" className="btn btn-primary">Enviar Mensagem</button>
         </form>
 
-        <div className="contact_whats col-3 m-auto pt-5">
-          <p>Caso queira um atedimento mais rapido fale agora pelo Whatsapp!</p>
+        <Contact_whats className="col-5 m-auto pt-5 text-center">
+          <p className="lead">Caso queira um atedimento mais rapido fale agora pelo Whatsapp!</p>
           <a target="_blank" href="#" ><button className="btn btn-success">WHATSAPP</button></a>
-        </div>
+        </Contact_whats>
 
-      </div>
+      </Contact_form>
 
     </section>
   )

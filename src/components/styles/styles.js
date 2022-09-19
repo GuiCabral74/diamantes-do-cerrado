@@ -6,6 +6,9 @@ import styled from "styled-components";
 
 // PRODUTOS
 
+export const My_container = styled.section`
+  height: 100vh;
+`
 
 
 // SOBRE
@@ -68,6 +71,15 @@ export const Btn = styled.button`
 
 // CONTATO
 
+export const Contact_form = styled.div`
+  color: #fff;
+`
+
+export const Contact_whats = styled.div`
+  p {
+    color: #fff;
+  }
+`
 
 
 // FOOTER
