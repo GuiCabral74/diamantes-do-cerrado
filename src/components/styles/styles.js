@@ -2,10 +2,19 @@ import styled from "styled-components";
 
 // NAV
 
+export const Nav_Btn = styled.button`
+  /* background: transparent;
+  border: solid 10px green;
+  padding: 10px;
+  margin: 10px;
+  color: white !important;
+  &:hover{
+    background: white;
+  } */
+`
 
 
 // PRODUTOS
-
 
 
 // SOBRE

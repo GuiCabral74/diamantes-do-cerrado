@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
@@ -8,25 +8,20 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
-// import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { NextPage } from 'next';
-
-interface Props {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
-  window?: () => Window;
-}
+import AnchorLink from "react-anchor-link-smooth-scroll";
+import { Nav_Btn } from './styles/styles';
 
 const drawerWidth = 240;
-const navItems = ['Home', 'About', 'Contact'];
+const navItems = ['Comprar produtos', 'Sobre o Négocio', 'Cadastrar', 'Contato'];
+const navLinks = ['#products', '#about', '#register', '#contact'];
 
-const NavBar: NextPage  = (props: Props) =>{
-  const { window } = props;
+
+
+const NavBar: NextPage  = () =>{
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
@@ -36,12 +31,12 @@ const NavBar: NextPage  = (props: Props) =>{
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
       <Typography variant="h6" sx={{ my: 2 }}>
-        MUI
+        Omnilife
       </Typography>
       <Divider />
       <List>
-        {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
+        {navItems.map((item, index) => (
+          <ListItem key={index} disablePadding>
             <ListItemButton sx={{ textAlign: 'center' }}>
               <ListItemText primary={item} />
             </ListItemButton>
@@ -51,11 +46,13 @@ const NavBar: NextPage  = (props: Props) =>{
     </Box>
   );
 
-  const container = window !== undefined ? () => window().document.body : undefined;
-
   return (
-    <Box sx={{ display: 'flex' }}>
-      <AppBar component="nav">
+    <Box id="box" sx={{ display: 'flex'}}>
+      <AppBar  id='ee' component="nav" sx={{
+  '& .MuiAppBar-root': {
+    background: 'red',
+  },
+}}>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -64,19 +61,23 @@ const NavBar: NextPage  = (props: Props) =>{
             onClick={handleDrawerToggle}
             sx={{ mr: 2, display: { sm: 'none' } }}
           >
-            GGG
+            OL
           </IconButton>
           <Typography
             variant="h6"
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
-            Omnilife
+            Omnilife<br/>Distribuidor Independente
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-            {navItems.map((item) => (
-              <Button key={item} sx={{ color: '#fff' }}>
-                {item}
+            {navItems.map((item, index) => (
+              <Button key={index} sx={{ color: '#fff' }}>
+                <AnchorLink style={{ textDecoration: "none" }}
+                  offset="120"
+                  href='#contact'>
+                  {item}
+                </AnchorLink>
               </Button>
             ))}
           </Box>
@@ -84,7 +85,6 @@ const NavBar: NextPage  = (props: Props) =>{
       </AppBar>
       <Box component="nav">
         <Drawer
-          container={container}
           variant="temporary"
           open={mobileOpen}
           onClose={handleDrawerToggle}

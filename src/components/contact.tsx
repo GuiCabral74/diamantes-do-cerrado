@@ -2,7 +2,7 @@ import type { NextPage } from "next"
 
 const Contact: NextPage = () => {
   return (
-    <section className="border rounded p-3 m-5">
+    <section id="contact" className="border rounded p-3 m-5">
 
       <div className="container col-12">
         <div className="contact col-3 m-auto pt-5">
