@@ -1,83 +1,89 @@
 import { NextPage } from "next"
-import { My_container } from "./styles/styles";
+import React from 'react';
+import Image from "next/image";
 
-
-import * as React from 'react';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import Card from '@mui/material/Card';
-import CardActionArea from '@mui/material/CardActionArea';
 import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Image from "next/image";
-import foto from '../assets/kit-nutricional.png';
-import foto1 from '../assets/carousel-1.png';
-import foto2 from '../assets/carousel-2.png';
-import foto3 from '../assets/carousel-3.png';
+
+import productsimgs from './productsImgs'
+import Carousel from 'react-bootstrap/Carousel';
+import { CardActions, Container } from "@mui/material";
+import categoryProducts from "./categoryProducts";
+import { Btn } from "./styles/styles";
+
 
 const Products: NextPage = () => {
   return (
-    // <My_container>
-    //   <div>
-    //     <h1>PRODUTOS OMnilife</h1>
-    //     <p>Adquira Produtos para Uso pessoal ou Cadastre-se para revenda!</p>
-    //   </div>
-    //   <div> imagens</div>
-    // </My_container>
+    <>
+      <Grid id='products' style={{ background: 'none', padding: '0 20px' }}>
+        <Card sx={{ display: 'flex', flexDirection: 'column' }}>
+          <CardContent sx={{ flex: 1 }} className="my-auto text-center">
+            <Typography component="h2" variant="h5" >
+              PRODUTOS Omnilife
+            </Typography>
+            <Typography variant="subtitle1" paragraph>
+              Adquira Produtos para Uso pessoal ou Cadastre-se para revenda!
+            </Typography>
+            <a target="_blank" href="#" > <button className="btn btn-success">WhatsApp</button></a>
+          </CardContent>
 
-    <Grid item xs={12} md={6}>
-      <Card sx={{ display: 'flex' }}>
-        <CardContent sx={{ flex: 1 }} className="my-auto text-center">
-          <Typography component="h2" variant="h5" >
-            PRODUTOS OMnilife
-          </Typography>
-          <Typography variant="subtitle1" paragraph>
-            Adquira Produtos para Uso pessoal ou Cadastre-se para revenda!
-          </Typography>
-          <a target="_blank" href="#" > <button className="btn btn-success">WhatsApp</button></a>
-        </CardContent>
+          <Carousel style={{ maxWidth: "50%" }}>
+            {productsimgs.map((item: any, index: number) => {
+              return (
+                <Carousel.Item key={index}>
+                  <Image className="rounded"
+                    src={item.image}
+                    alt={item.alt}
+                  />
+                </Carousel.Item>)
+            })}
+          </Carousel>
+        </Card>
+      </Grid>
 
-        {/* <div id="carouselExampleSlidesOnly" className="carousel slide" data-bs-ride="carousel">
-          <div className="carousel-inner">
-            <div className="carousel-item active">
-              <Image src={foto1} className="d-block img-thumbnail w-100" alt="..." />
-            </div>
-            <div className="carousel-item">
-              <Image src={foto2} className="d-block img-thumbnail w-100" alt="..." />
-            </div>
-            <div className="carousel-item">
-              <Image src={foto3} className="d-block img-thumbnail w-100" alt="..." />
-            </div>
-          </div>
-        </div> */}
+      <section id="products_second">
+        <Typography align="center">Categorias</Typography>
+        <Typography
+          component="h1"
+          variant="h2"
+          align="center"
+          color="text.primary"
+          gutterBottom
+        >
+          Produtos Omnilife
+        </Typography>
+        <Container sx={{ py: 8 }} maxWidth="md">
 
-        <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
-          <div className="carousel-inner">
-            <div className="carousel-item active">
-              <Image src={foto1} className="d-block img-thumbnail w-100" alt="foto1" />
-            </div>
-            <div className="carousel-item">
-              <Image src={foto2} className="d-block img-thumbnail w-100" alt="foto2" />
-            </div>
-            <div className="carousel-item">
-              <Image src={foto3} className="d-block img-thumbnail w-100" alt="foto3" />
-            </div>
-          </div>
-          <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span className="visually-hidden">Previous</span>
-          </button>
-          <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-            <span className="carousel-control-next-icon" aria-hidden="true"></span>
-            <span className="visually-hidden">Next</span>
-          </button>
-        </div>
+          <Grid container spacing={4}>
+            {categoryProducts.map((item: any, index: number) => (
+              <Grid item key={index} xs={12} sm={6} md={6}>
+                <Card
+                  sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
+                >
+                  <Image
+                    src={item.image}
+                    alt={item.alt}
+                  />
 
-      </Card>
+                  <CardContent sx={{ flexGrow: 1 }}>
+                    <Typography gutterBottom variant="h5" component="h2" textAlign={"center"} >
+                      {item.name}
+                    </Typography>
+                    <Typography>
+                      <p>{item.products}</p>
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
+        </Container>
 
-    </Grid>
+      </section>
+    </>
   )
 }
-
 
 export default Products;

@@ -47,12 +47,8 @@ const NavBar: NextPage  = () =>{
   );
 
   return (
-    <Box id="box" sx={{ display: 'flex'}}>
-      <AppBar  id='ee' component="nav" sx={{
-  '& .MuiAppBar-root': {
-    background: 'red',
-  },
-}}>
+    <Box id="navBar" sx={{ display: 'flex'}}>
+      <AppBar  id='burgernavBar' component="nav">
         <Toolbar>
           <IconButton
             color="inherit"
