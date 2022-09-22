@@ -32,7 +32,7 @@ const Contact: NextPage = () => {
 
         <Contact_whats className="col-5 m-auto pt-5 text-center">
           <p className="lead">Caso queira um atedimento mais rapido fale agora pelo Whatsapp!</p>
-          <a target="_blank" href="#" ><button className="btn btn-success">WHATSAPP</button></a>
+          <a target="_blank" href="https://wa.me/5561991998882" rel="noreferrer" > <button className="btn btn-success">WhatsApp</button></a>
         </Contact_whats>
 
       </Contact_form>

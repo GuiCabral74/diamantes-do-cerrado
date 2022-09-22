@@ -18,8 +18,15 @@ import { Nav_Btn } from './styles/styles';
 const drawerWidth = 240;
 const navItems = ['Comprar produtos', 'Sobre o Négocio', 'Cadastrar', 'Contato'];
 const navLinks = ['#products', '#about', '#register', '#contact'];
+const navzao = [
+  ['Comprar produtos', '#products'],
+  ['Sobre o Négocio', '#about'],
+  ['Cadastrar', '#register'],
+  ['Contato', '#contact'],
+]
+const arr =[];
 
-
+console.log(navzao[0][1], "***");
 
 const NavBar: NextPage  = () =>{
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -29,26 +36,41 @@ const NavBar: NextPage  = () =>{
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
+    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }} >
+      <Typography variant="h6" sx={{ my: 2 }} style={{color: '#fff' }}>
         Omnilife
       </Typography>
-      <Divider />
+      <Divider style={{background: '#fff' }}/>
       <List>
         {navItems.map((item, index) => (
-          <ListItem key={index} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item} />
-            </ListItemButton>
-          </ListItem>
+          <Button key={index} >
+          <AnchorLink style={{ textDecoration: "none", color: '#fff' }}
+            offset="120"
+            
+            href='#contact'>
+            {item}
+          </AnchorLink>
+        </Button>
         ))}
+
+        {/* {navzao.map((item: any, index: number) => (
+          <Button key={index} >
+          <AnchorLink style={{ textDecoration: "none", color: '#fff' }}
+            offset="120"
+            
+            href={item[0][1]}>
+            {item[1][0]}
+          </AnchorLink>
+        </Button>
+        ))} */}
+        
       </List>
     </Box>
   );
 
   return (
     <Box id="navBar" sx={{ display: 'flex'}}>
-      <AppBar  id='burgernavBar' component="nav">
+      <AppBar  id='burgernavBar' component="nav" style={{ background: 'black' }}>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -66,10 +88,10 @@ const NavBar: NextPage  = () =>{
           >
             Omnilife<br/>Distribuidor Independente
           </Typography>
-          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+          <Box sx={{ display: { xs: 'none', sm: 'block' } }} >
             {navItems.map((item, index) => (
-              <Button key={index} sx={{ color: '#fff' }}>
-                <AnchorLink style={{ textDecoration: "none" }}
+              <Button key={index} >
+                <AnchorLink style={{ textDecoration: "none", color: '#fff' }}
                   offset="120"
                   href='#contact'>
                   {item}
@@ -89,7 +111,7 @@ const NavBar: NextPage  = () =>{
           }}
           sx={{
             display: { xs: 'block', sm: 'none' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth, background:'black' },
           }}
         >
           {drawer}
