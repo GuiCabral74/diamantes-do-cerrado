@@ -10,6 +10,7 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Btn, List, Register_Container } from './styles/styles';
 import Image from "next/image";
+import prod_register from '../assets/products-register.png'
 
 import kits from './kits.js'
 
@@ -140,6 +141,35 @@ const Register: NextPage = () => {
             ))}
           </Grid>
         </Container>
+
+        <Grid container justifyContent="center" >
+          <Grid container md={12} alignItems="center" p={2} >
+            <Grid xs={6}>
+              <Image src={prod_register} alt="Produtos" />
+            </Grid>
+            <Grid xs={6} style={{ textAlign: 'center' }}>
+              <h2>Gostaria de adquirir produtos Omnilife com  desconto?</h2>
+              <p>Conheça as vantagens em realizar seu cadastro como Distribuidor Independente  Omnilife. Adquira produtos com desconto para uso pessoal e faça negócio!</p>
+              <a target="_blank" href="https://wa.me/5561991998882" rel="noreferrer" > <button className="btn btn-success">Cadastre-se AGORA!</button></a>
+            </Grid>
+          </Grid>
+          <Grid>
+            <Typography align="center" style={{ padding: '20px 0 0' }}>Vantagens do Cadastro</Typography>
+            <Typography
+              component="h1"
+              variant="h2"
+              align="center"
+              color="text.primary"
+              gutterBottom
+            >
+              Consumo inteligente com desconto
+            </Typography>
+            {/* <Grid>
+
+            </Grid> */}
+          </Grid>
+        </Grid>
+
       </main>
     </ThemeProvider>
   )

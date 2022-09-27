@@ -16,17 +16,12 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 import { Nav_Btn } from './styles/styles';
 
 const drawerWidth = 240;
-const navItems = ['Comprar produtos', 'Sobre o Négocio', 'Cadastrar', 'Contato'];
-const navLinks = ['#products', '#about', '#register', '#contact'];
 const navzao = [
-  ['Comprar produtos', '#products'],
-  ['Sobre o Négocio', '#about'],
-  ['Cadastrar', '#register'],
-  ['Contato', '#contact'],
+  {title: 'Comprar produtos', route: '#products'},
+  {title: 'Sobre o Négocio', route: '#about'},
+  {title: 'Cadastrar', route: '#register'},
+  {title: 'Contato', route: '#contact'},
 ]
-const arr =[];
-
-console.log(navzao[0][1], "***");
 
 const NavBar: NextPage  = () =>{
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -41,29 +36,17 @@ const NavBar: NextPage  = () =>{
         Omnilife
       </Typography>
       <Divider style={{background: '#fff' }}/>
-      <List>
-        {navItems.map((item, index) => (
+      <List style={{display: 'flex', flexDirection: 'column'}}>
+        {navzao.map((item, index) => (
           <Button key={index} >
           <AnchorLink style={{ textDecoration: "none", color: '#fff' }}
             offset="120"
             
-            href='#contact'>
-            {item}
+            href={item.route}>
+            {item.title}
           </AnchorLink>
         </Button>
-        ))}
-
-        {/* {navzao.map((item: any, index: number) => (
-          <Button key={index} >
-          <AnchorLink style={{ textDecoration: "none", color: '#fff' }}
-            offset="120"
-            
-            href={item[0][1]}>
-            {item[1][0]}
-          </AnchorLink>
-        </Button>
-        ))} */}
-        
+        ))}        
       </List>
     </Box>
   );
@@ -89,12 +72,12 @@ const NavBar: NextPage  = () =>{
             Omnilife<br/>Distribuidor Independente
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }} >
-            {navItems.map((item, index) => (
+            {navzao.map((item, index) => (
               <Button key={index} >
                 <AnchorLink style={{ textDecoration: "none", color: '#fff' }}
                   offset="120"
-                  href='#contact'>
-                  {item}
+                  href={item.route}>
+                  {item.title}
                 </AnchorLink>
               </Button>
             ))}
