@@ -1,11 +1,11 @@
-import foto1 from '../assets/carousel-1.png';
-import foto2 from '../assets/carousel-2.png';
-import foto3 from '../assets/carousel-3.png';
-import foto4 from '../assets/carousel-4.png';
-import foto5 from '../assets/carousel-5.png';
-import foto6 from '../assets/carousel-6.png';
-import foto7 from '../assets/carousel-7.png';
-import foto8 from '../assets/carousel-8.png';
+import foto1 from '../../assets/carousel-1.png';
+import foto2 from '../../assets/carousel-2.png';
+import foto3 from '../../assets/carousel-3.png';
+import foto4 from '../../assets/carousel-4.png';
+import foto5 from '../../assets/carousel-5.png';
+import foto6 from '../../assets/carousel-6.png';
+import foto7 from '../../assets/carousel-7.png';
+import foto8 from '../../assets/carousel-8.png';
 
 const productsimgs = [
   {

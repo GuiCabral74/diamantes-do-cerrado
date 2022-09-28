@@ -1,5 +1,5 @@
-import kitNutricional from "../assets/kit-nutricional.png";
-import kitSeytu from "../assets/kit-seytu.png";
+import kitNutricional from "../../assets/kit-nutricional.png";
+import kitSeytu from "../../assets/kit-seytu.png";
 
 const kits = [
   {

@@ -1,7 +1,7 @@
-import foto1 from '../assets/category1.jpeg';
-import foto2 from '../assets/category2.jpeg';
-import foto3 from '../assets/category3.jpeg';
-import foto4 from '../assets/category4.jpeg';
+import foto1 from '../../assets/category1.jpeg';
+import foto2 from '../../assets/category2.jpeg';
+import foto3 from '../../assets/category3.jpeg';
+import foto4 from '../../assets/category4.jpeg';
 
 const categoryProducts = [
   {

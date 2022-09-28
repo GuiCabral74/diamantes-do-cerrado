@@ -18,7 +18,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Btn, List, Register_Container } from './styles/styles';
 import Image from "next/image";
 
-import kits from './kits.js'
+import kits from './js/kits.js'
 
 
 
