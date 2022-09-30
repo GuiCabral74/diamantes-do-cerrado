@@ -45,7 +45,7 @@ const Products: NextPage = () => {
 
       <Grid container direction="column" justifyContent="center" alignItems="center" id="products_second">
         <Grid>
-          <Typography align="center" style={{ padding: '20px 0 0' }}>Categorias</Typography>
+          <Typography align="center" variant="h4" pt={5} >Categorias</Typography>
           <Typography
             component="h1"
             variant="h2"

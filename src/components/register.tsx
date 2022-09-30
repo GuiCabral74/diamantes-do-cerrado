@@ -153,7 +153,7 @@ const Register: NextPage = () => {
             </Grid>
           </Grid>
           <Grid>
-            <Typography align="center" style={{ padding: '20px 0 0' }}>Vantagens do Cadastro</Typography>
+            <Typography align="center" variant="h4" pt={2}>Vantagens do Cadastro</Typography>
             <Typography
               component="h1"
               variant="h2"
